@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Share</string>
+
+    <!-- Create UI -->
+    <string name="qrCreateText">Scan the QR code to connect other device</string>
+
+
+    <!-- Permission Handler -->
+    <string name="locationRational">Please allow Location Permission from App Settings to setup hotspot</string>
+    <string name="locationEnable">Please turn on location service to set-up hotspot</string>
+    <string name="askToEnableLocationTitle">Enable Location !</string>
+    <string name="askToEnableLocationMessage">Please enable location service to create hotspot and try again</string>
+</resources>
