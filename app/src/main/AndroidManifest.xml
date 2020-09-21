@@ -37,6 +37,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.CreateUI" />
+        <activity android:name=".ui.JoinUI" />
+
+       <!-- <receiver
+            android:name=".util.WiFiReceiver"
+            android:enabled="true"
+            android:exported="true">
+            &lt;!&ndash;<intent-filter>
+                <action android:name="android.net.wifi.WIFI_AP_STATE_CHANGED" />
+                <action android:name="android.net.wifi.WIFI_HOTSPOT_CLIENTS_CHANGED" />
+            </intent-filter>&ndash;&gt;
+        </receiver>-->
     </application>
 
 </manifest>

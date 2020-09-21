@@ -20,8 +20,10 @@ class ConnectionRetriever(val serverSocket: ServerSocket) : Thread() {
         try {
             do {
                 client = serverSocket.accept()
+                val ip = client.inetAddress.hostAddress
+                onConnectionReceived?.invoke(true, ip, 0)
 
-                if (client.getInputStream() != null) {
+                /*if (client.getInputStream() != null) {
                     val bufferedInputStream = BufferedInputStream(client.getInputStream())
 
                     val dataInputStream = DataInputStream(bufferedInputStream)
@@ -35,7 +37,7 @@ class ConnectionRetriever(val serverSocket: ServerSocket) : Thread() {
                     onConnectionReceived?.invoke(true, clientIp, clientPort)
 
                     client.close()
-                }
+                }*/
             } while (true)
         } catch (e: IOException) {
             e.printStackTrace()

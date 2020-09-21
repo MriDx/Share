@@ -10,4 +10,6 @@
     <string name="locationEnable">Please turn on location service to set-up hotspot</string>
     <string name="askToEnableLocationTitle">Enable Location !</string>
     <string name="askToEnableLocationMessage">Please enable location service to create hotspot and try again</string>
+
+    <string name="cameraRational">Please allow Camera Permission from App Settings to Scan QR code</string>
 </resources>

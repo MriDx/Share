@@ -21,6 +21,7 @@ class PermissionHandler {
         const val LOCATION_PERMISSION_REQ = 901
         const val SYSTEM_PERMISSION_REQ = 801
         const val APP_SETTINGS_REQ = 802
+        const val CAMERA_PERMISSION_REQ = 901
 
         fun checkLocation(context: Context): Boolean {
             if (ActivityCompat.checkSelfPermission(
@@ -113,6 +114,33 @@ class PermissionHandler {
                 }
             }
             alertDialog.show()
+        }
+
+        fun checkCamera(context: Context): Boolean {
+            if (ActivityCompat.checkSelfPermission(
+                    context,
+                    Manifest.permission.CAMERA
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                return false
+            }
+            return true
+        }
+
+        fun askCamera(context: Context) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    context as Activity,
+                    Manifest.permission.CAMERA
+                )
+            ) {
+                showRational(context, context.getString(R.string.locationRational))
+                return
+            }
+            ActivityCompat.requestPermissions(
+                context,
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_REQ
+            )
         }
 
     }

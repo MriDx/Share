@@ -23,6 +23,7 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 import com.google.zxing.qrcode.QRCodeWriter
+import com.mridx.shareshit.data.ConnectionData
 import com.mridx.shareshit.thread.ConnectionRetriever
 import com.mridx.shareshit.util.PermissionHandler
 import com.mridx.shareshit.util.Util
@@ -36,10 +37,14 @@ class CreateUIViewModel : ViewModel() {
 
     private val _progress = MutableLiveData<Boolean>().apply { value = false }
     private val _qr = MutableLiveData<Bitmap>().apply { value = null }
+    private val _connectionInfo = MutableLiveData<ConnectionData>().apply {
+        value = ConnectionData(false, null)
+    }
 
 
     val progress = _progress
     val qr = _qr
+    val connectionInfo = _connectionInfo
 
     @SuppressLint("MissingPermission")
     fun turnOnHotspot(context: Context, wifiManager: WifiManager) {
@@ -160,15 +165,22 @@ class CreateUIViewModel : ViewModel() {
     }
 
     fun invoke(connected: Boolean, clientIp: String?, clientPort: Int) {
-        if (connected) {
-            _progress.apply { value = true }
+        kotlin.run {
+            /* _connectionInfo.apply {
+                 value = ConnectionData(connected, clientIp)
+             }*/
+            _connectionInfo.postValue(ConnectionData(connected, clientIp))
         }
+
     }
 
     fun destroy() {
-        hotspotReservation?.close()
-        hotspotReservation = null
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            hotspotReservation?.close()
+            hotspotReservation = null
+        }
         Util.getInstance().serverSocket.close()
+        Util.getInstance().serverSocket = null
         connectionRetriever?.interrupt()
         connectionRetriever = null
     }

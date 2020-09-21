@@ -22,7 +22,7 @@ class StartUI : AppCompatActivity() {
     }
 
     private fun actionJoin() {
-        startActivity(Intent(this, CreateUI::class.java))
+        startActivity(Intent(this, JoinUI::class.java))
     }
 
 }

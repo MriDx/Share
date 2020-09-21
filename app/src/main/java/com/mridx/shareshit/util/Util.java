@@ -35,6 +35,11 @@ public class Util {
         return serverSocket;
     }
 
+    public void setServerSocket(ServerSocket serverSocket) {
+        this.serverSocket = serverSocket;
+    }
+
+
     public void stopServer() {
         try {
             if (serverSocket != null) {
