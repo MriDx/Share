@@ -32,7 +32,7 @@ import java.net.ServerSocket
 
 class CreateUIViewModel : ViewModel() {
 
-    var hotspotReservation: LocalOnlyHotspotReservation? = null
+    //var hotspotReservation: LocalOnlyHotspotReservation? = null
     var connectionRetriever: ConnectionRetriever? = null
 
     private val _progress = MutableLiveData<Boolean>().apply { value = false }
@@ -60,7 +60,8 @@ class CreateUIViewModel : ViewModel() {
             wifiManager.startLocalOnlyHotspot(object : LocalOnlyHotspotCallback() {
                 override fun onStarted(reservation: LocalOnlyHotspotReservation) {
                     super.onStarted(reservation)
-                    hotspotReservation = reservation
+                    //hotspotReservation = reservation
+                    Util.getInstance().hotspotReservation = reservation
                     generateQR(reservation)
                 }
 
@@ -176,8 +177,8 @@ class CreateUIViewModel : ViewModel() {
 
     fun destroy() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            hotspotReservation?.close()
-            hotspotReservation = null
+            //hotspotReservation?.close()
+            //hotspotReservation = null
         }
         Util.getInstance().serverSocket.close()
         Util.getInstance().serverSocket = null

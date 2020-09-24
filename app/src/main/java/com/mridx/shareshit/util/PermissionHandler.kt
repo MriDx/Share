@@ -11,7 +11,7 @@ import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.mridx.shareshit.R
-import com.mridx.shareshit.ui.CreateUI
+import com.mridx.shareshit.ui.activity.CreateUI
 
 class PermissionHandler {
 

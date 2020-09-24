@@ -1,4 +1,4 @@
-package com.mridx.shareshit.ui
+package com.mridx.shareshit.ui.activity
 
 import android.content.Intent
 import android.os.Bundle

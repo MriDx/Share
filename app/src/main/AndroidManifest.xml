@@ -28,26 +28,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.FullScreen">
-        <activity android:name=".ui.StartUI">
+        android:theme="@style/AppTheme.FullScreen"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="q">
+        <activity android:name=".ui.activity.StartUI">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CreateUI" />
-        <activity android:name=".ui.JoinUI" />
+        <activity android:name=".ui.activity.CreateUI" />
+        <activity android:name=".ui.activity.JoinUI" />
+        <activity android:name=".ui.activity.MainUI" />
 
-       <!-- <receiver
-            android:name=".util.WiFiReceiver"
-            android:enabled="true"
-            android:exported="true">
-            &lt;!&ndash;<intent-filter>
-                <action android:name="android.net.wifi.WIFI_AP_STATE_CHANGED" />
-                <action android:name="android.net.wifi.WIFI_HOTSPOT_CLIENTS_CHANGED" />
-            </intent-filter>&ndash;&gt;
-        </receiver>-->
     </application>
 
 </manifest>

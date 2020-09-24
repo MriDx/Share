@@ -1,4 +1,4 @@
-package com.mridx.shareshit.ui
+package com.mridx.shareshit.ui.activity
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -41,6 +41,10 @@ class CreateUI : AppCompatActivity() {
                 // TODO: 20/09/20 open files
                 Log.d("kaku", "onCreate: ${it.ip}")
                 Toast.makeText(this, "Connected to ${it.ip}", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, MainUI::class.java)
+                intent.putExtra("TYPE", Utils.TYPE.HOST)
+                startActivity(intent)
+                finish()
             }
         })
 
