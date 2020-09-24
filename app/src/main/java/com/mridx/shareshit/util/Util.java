@@ -1,5 +1,7 @@
 package com.mridx.shareshit.util;
 
+import android.net.wifi.WifiManager;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class Util {
 
     private static Util instance;
     private ServerSocket serverSocket;
+    private WifiManager.LocalOnlyHotspotReservation hotspotReservation;
 
     public static Util getInstance() {
         if (instance == null) {
@@ -37,6 +40,14 @@ public class Util {
 
     public void setServerSocket(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
+    }
+
+    public WifiManager.LocalOnlyHotspotReservation getHotspotReservation() {
+        return hotspotReservation;
+    }
+
+    public void setHotspotReservation(WifiManager.LocalOnlyHotspotReservation hotspotReservation) {
+        this.hotspotReservation = hotspotReservation;
     }
 
 

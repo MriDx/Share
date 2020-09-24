@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.progress.ProgressFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apps"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:text="Receiving 10"
+                android:id="@+id/appTotal"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WhatsApp"
+                app:fontFamily="sans-serif-condensed"
+                android:id="@+id/appCurrent"
+                />
+            <com.google.android.material.progressindicator.ProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="58"
+                app:circularRadius="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/appProgress"
+                />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.1 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    android:id="@+id/appDownloaded"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="32 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    android:id="@+id/appSize"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Photos"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:text="Received 5 of 10"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receiving IMG00191.jpg"
+                app:fontFamily="sans-serif-condensed"
+                />
+            <com.google.android.material.progressindicator.ProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="58"
+                app:circularRadius="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.1 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="32 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Videos"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:text="Received 5 of 10"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receiving Pareeksha"
+                app:fontFamily="sans-serif-condensed"
+                />
+            <com.google.android.material.progressindicator.ProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="58"
+                app:circularRadius="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="532 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="913 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Musics"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:textSize="18sp"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-condensed-medium"
+                android:text="Received 5 of 10"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receiving Mirage"
+                app:fontFamily="sans-serif-condensed"
+                />
+            <com.google.android.material.progressindicator.ProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="58"
+                app:circularRadius="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.1 MB"
+                    app:fontFamily="sans-serif-condensed-light"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

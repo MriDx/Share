@@ -85,14 +85,16 @@ class JoinUIViewModel : ViewModel() {
         name: String
     ): WifiConfiguration? {
 
-        val configurationList: List<WifiConfiguration> = wifiManager.configuredNetworks
-        for (wifiConfiguration in configurationList) {
-            if (wifiConfiguration.SSID != null && wifiConfiguration.SSID.equals(
-                    name,
-                    ignoreCase = true
-                )
-            ) {
-                return wifiConfiguration
+        val configurationList: List<WifiConfiguration>? = wifiManager.configuredNetworks
+        if (configurationList != null) {
+            for (wifiConfiguration in configurationList) {
+                if (wifiConfiguration.SSID != null && wifiConfiguration.SSID.equals(
+                        name,
+                        ignoreCase = false
+                    )
+                ) {
+                    return wifiConfiguration
+                }
             }
         }
         return null
@@ -145,16 +147,16 @@ class JoinUIViewModel : ViewModel() {
         val name = wifiManager.connectionInfo.ssid
         if (name.contains("\"") && name.replace("\"", "").equals(ssid, ignoreCase = false)) {
             startCheckingHost(wifiManager)
-        } else {
+        } /*else {
             GlobalScope.launch {
                 delay(1000)
                 startCheckLoop(wifiManager)
             }
-        }
-       /* GlobalScope.launch {
+        }*/
+        GlobalScope.launch {
             delay(1000 * 3)
             _showPushBtn.postValue(true)
-        }*/
+        }
     }
 
     fun startCheckingHost(wifiManager: WifiManager) {

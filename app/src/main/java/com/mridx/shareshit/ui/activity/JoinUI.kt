@@ -1,19 +1,16 @@
-package com.mridx.shareshit.ui
+package com.mridx.shareshit.ui.activity
 
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.wifi.WifiManager
-import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.zxing.integration.android.IntentIntegrator
 import com.mridx.shareshit.R
-import com.mridx.shareshit.util.WiFiReceiver
+import com.mridx.shareshit.util.Utils
 import com.mridx.shareshit.viewmodel.JoinUIViewModel
 import kotlinx.android.synthetic.main.join_ui.*
 
@@ -22,7 +19,6 @@ class JoinUI : AppCompatActivity() {
 
     private lateinit var wifiManager: WifiManager
     lateinit var viewModel: JoinUIViewModel
-    private var receiver: WiFiReceiver? = null
     private var intentFilter = IntentFilter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +34,10 @@ class JoinUI : AppCompatActivity() {
         viewModel.connectionInfo.observe(this, {
             if (it.success) {
                 Toast.makeText(this, "Connected to ${it.ip}", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, MainUI::class.java)
+                intent.putExtra("TYPE", Utils.TYPE.CLIENT)
+                startActivity(intent)
+                finish()
             }
         })
 
@@ -51,14 +51,6 @@ class JoinUI : AppCompatActivity() {
         pushBtn?.setOnClickListener { viewModel.startCheckingHost(wifiManager) }
 
 
-    }
-
-    fun wifiReceived() {
-        //viewModel.startCheckingHost(wifiManager)
-
-        Handler().postDelayed({
-            viewModel.startCheckingHost(wifiManager)
-        }, 3 * 1000.toLong())
     }
 
 

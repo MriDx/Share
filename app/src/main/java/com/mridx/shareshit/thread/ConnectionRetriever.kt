@@ -23,21 +23,6 @@ class ConnectionRetriever(val serverSocket: ServerSocket) : Thread() {
                 val ip = client.inetAddress.hostAddress
                 onConnectionReceived?.invoke(true, ip, 0)
 
-                /*if (client.getInputStream() != null) {
-                    val bufferedInputStream = BufferedInputStream(client.getInputStream())
-
-                    val dataInputStream = DataInputStream(bufferedInputStream)
-
-                    var clientIp = dataInputStream.readUTF() //read ip
-
-                    clientIp = client.inetAddress.hostAddress
-
-                    val clientPort = dataInputStream.readInt() //read port
-
-                    onConnectionReceived?.invoke(true, clientIp, clientPort)
-
-                    client.close()
-                }*/
             } while (true)
         } catch (e: IOException) {
             e.printStackTrace()
